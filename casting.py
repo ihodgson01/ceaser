@@ -32,17 +32,7 @@ def en(message, shift):
 	#option = input("")
 
 	encoded= ''
-	f = open('encrypt.txt','w')	
-
-	'''for i in range(len(message)):
-		  tempv = ord(message[i])
-		  tempv = tempv + shift
-		  tempv = chr(tempv) 
-		  encoded.append(tempv)
-
-	for q in range(len(encoded)):
-		print(encoded[q],end='')'''
-		
+	f = open('message.txt','w')	
 	for n in range(len(message)):
 		if message[n].isalpha():
 			if message[n].islower():
@@ -79,7 +69,7 @@ def en(message, shift):
 
 def de(message, shift):
 	encoded = ''
-	f = open('encrypt.txt','w')	
+	f = open('message.txt','w')	
 	
 	for n in range(len(message)):
 		if message[n].isalpha():
@@ -106,6 +96,7 @@ def de(message, shift):
 		else:
 			encoded += message[n]
 
+	print(encoded)
 	f.write(encoded)
 	print('message has been written to encrypt.txt, its there becouse it secret')
 	f.close()
